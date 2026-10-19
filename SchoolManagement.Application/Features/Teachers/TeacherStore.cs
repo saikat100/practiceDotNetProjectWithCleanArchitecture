@@ -1,6 +1,6 @@
-namespace SchoolManagement.Application.Features.Teachers;
+namespace SchoolManagement.Domain.Aggregate;
 
 public class TeacherStore
 {
-    public static List<TeacherResponse> Teachers { get; } = [];
+    public static List<TeacherAggregate> Teachers { get; } = [];
 }

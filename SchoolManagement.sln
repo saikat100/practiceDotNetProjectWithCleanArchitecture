@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SchoolManagement.Api", "Sch
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SchoolManagement.Application", "SchoolManagement.Application\SchoolManagement.Application.csproj", "{8927FC52-E068-40B8-9263-361FB90055A1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SchoolManagement.Domain", "SchoolManagement.Domain\SchoolManagement.Domain.csproj", "{21F892AF-A990-41C3-9791-1D427A32E3C0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,5 +26,9 @@ Global
 		{8927FC52-E068-40B8-9263-361FB90055A1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8927FC52-E068-40B8-9263-361FB90055A1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8927FC52-E068-40B8-9263-361FB90055A1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{21F892AF-A990-41C3-9791-1D427A32E3C0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{21F892AF-A990-41C3-9791-1D427A32E3C0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{21F892AF-A990-41C3-9791-1D427A32E3C0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{21F892AF-A990-41C3-9791-1D427A32E3C0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

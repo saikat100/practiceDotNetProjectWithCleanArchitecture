@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using SchoolManagement.Application.Features.Teachers;
 using SchoolManagement.Application.Features.Teachers.Commands.CreateTeacher;
+using SchoolManagement.Domain.Aggregate;
 
 namespace SchoolManagement.Api.Controllers;
 
@@ -20,8 +21,5 @@ public class TeachersController(CreateTeacherCommandHandler createTeacherCommand
 
 
     [HttpGet]
-    public IActionResult Get()
-    {
-        return Ok(TeacherStore.Teachers);
-    }
+    public IActionResult GetAll() => Ok(TeacherStore.Teachers.Select(t => new TeacherResponse(t.Id, t.FirstName, t.LastName, t.FullName)).ToList());
 }
