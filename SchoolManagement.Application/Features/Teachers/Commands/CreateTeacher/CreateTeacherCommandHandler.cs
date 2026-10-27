@@ -1,8 +1,9 @@
+using MediatR;
 using SchoolManagement.Domain.Aggregate;
 using SchoolManagement.Domain.Repositories;
 namespace SchoolManagement.Application.Features.Teachers.Commands.CreateTeacher;
 
-public class CreateTeacherCommandHandler(ITeacherRepository repository)
+public class CreateTeacherCommandHandler(ITeacherRepository repository) : IRequestHandler<CreateTeacherCommand, Guid>
 {
     public async Task<Guid> Handle(CreateTeacherCommand command, CancellationToken cancellationToken)
     {

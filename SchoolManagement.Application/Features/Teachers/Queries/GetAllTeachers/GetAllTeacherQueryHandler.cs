@@ -1,8 +1,10 @@
+using MediatR;
+using SchoolManagement.Domain.Aggregate;
 using SchoolManagement.Domain.Repositories;
 
 namespace SchoolManagement.Application.Features.Teachers.Queries.GetAllTeachers;
 
-public class GetAllTeacherQueryHandler(ITeacherRepository repository)
+public class GetAllTeachersQueryHandler(ITeacherRepository repository) : IRequestHandler<GetAllTeachersQuery, List<TeacherResponse>>
 {
     public async Task<List<TeacherResponse>> Handle(GetAllTeachersQuery query, CancellationToken cancellationToken)
     {
