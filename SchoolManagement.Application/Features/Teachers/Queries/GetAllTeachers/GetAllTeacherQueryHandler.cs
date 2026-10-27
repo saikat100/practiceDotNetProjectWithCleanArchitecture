@@ -1,12 +1,12 @@
-using SchoolManagement.Domain.Aggregate;
+using SchoolManagement.Domain.Repositories;
 
 namespace SchoolManagement.Application.Features.Teachers.Queries.GetAllTeachers;
 
-public class GetAllTeacherQueryHandler
+public class GetAllTeacherQueryHandler(ITeacherRepository repository)
 {
-    public Task<List<TeacherResponse>> Handle(GetAllTeachersQuery query, CancellationToken cancellationToken)
+    public async Task<List<TeacherResponse>> Handle(GetAllTeachersQuery query, CancellationToken cancellationToken)
     {
-        var teachers = TeacherStore.Teachers.Select(t => new TeacherResponse(t.Id, t.FirstName, t.LastName, t.FullName)).ToList();
-        return Task.FromResult(teachers);
+        var teachers = await repository.GetAllAsync(cancellationToken);
+        return teachers.Select(t => new TeacherResponse(t.Id, t.FirstName, t.LastName, t.FullName)).ToList();
     }
 }

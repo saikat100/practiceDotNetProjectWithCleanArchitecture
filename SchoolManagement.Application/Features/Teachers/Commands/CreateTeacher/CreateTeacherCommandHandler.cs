@@ -1,15 +1,14 @@
 using SchoolManagement.Domain.Aggregate;
-
+using SchoolManagement.Domain.Repositories;
 namespace SchoolManagement.Application.Features.Teachers.Commands.CreateTeacher;
 
-public class CreateTeacherCommandHandler
+public class CreateTeacherCommandHandler(ITeacherRepository repository)
 {
-    public Task<Guid> Handle(CreateTeacherCommand command, CancellationToken cancellationToken)
+    public async Task<Guid> Handle(CreateTeacherCommand command, CancellationToken cancellationToken)
     {
         var teacher = TeacherAggregate.Create(command.FirstName, command.LastName);
 
-        TeacherStore.Teachers.Add(teacher);
-
-        return Task.FromResult(teacher.Id);
+        await repository.AddAsync(teacher, cancellationToken);
+        return teacher.Id;
     }
 }
