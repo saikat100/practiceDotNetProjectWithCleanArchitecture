@@ -1,3 +1,4 @@
+using SchoolManagement.SharedKernel.Primitives;
 namespace SchoolManagement.Domain.Aggregate;
 
 public class TeacherAggregate
@@ -9,19 +10,19 @@ public class TeacherAggregate
 
     private TeacherAggregate(){}
 
-    public static TeacherAggregate Create(string firstName, string lastName)
+    public static Result<TeacherAggregate> Create(string firstName, string lastName)
     {
         if (string.IsNullOrWhiteSpace(firstName))
-            throw new ArgumentException("First name is required.", nameof(firstName));
+            return Result<TeacherAggregate>.Failure(Error.Validation("Teacher.FirstNameRequired", "First name is required."));
 
         if (string.IsNullOrWhiteSpace(lastName))
-            throw new ArgumentException("Last name is required.", nameof(lastName));
+            return Result<TeacherAggregate>.Failure(Error.Validation("Teacher.LastNameRequired", "Last name is required."));
 
         var teacher = new TeacherAggregate{
             Id = Guid.NewGuid(),
             FirstName = firstName.Trim(),
             LastName = lastName.Trim()
         };
-        return teacher;
+        return Result<TeacherAggregate>.Success(teacher);
     }
 }

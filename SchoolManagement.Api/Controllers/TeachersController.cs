@@ -12,10 +12,8 @@ public class TeachersController(ISender sender) : ControllerBase
     [HttpPost]
     public async Task<IActionResult> Create(CreateTeacherCommand command, CancellationToken cancellationToken)
     {
-        var id = await sender.Send(command, cancellationToken);
-        var fullName = $"{command.FirstName} {command.LastName}";
-
-        return Ok(new { Id = id, FullName = fullName });
+        var result = await sender.Send(command, cancellationToken);
+        return result.IsSuccess ? Ok(new {id = result.Value}) : result.Error.ToProblem();
     }
 
     [HttpGet]
