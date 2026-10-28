@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using SchoolManagement.SharedKernel.Primitives;
 
 namespace SchoolManagement.Api.Extensions;
 
@@ -8,6 +9,7 @@ public static class ErrorExtensions
     {
         var status = error.Type switch
         {
+            ErrorType.Validation => StatusCodes.Status400BadRequest,
             ErrorType.NotFound => StatusCodes.Status404NotFound,
             ErrorType.Conflict => StatusCodes.Status409Conflict,
             _ => StatusCodes.Status500InternalServerError

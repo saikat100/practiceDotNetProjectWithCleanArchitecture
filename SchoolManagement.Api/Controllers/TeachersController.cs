@@ -1,5 +1,6 @@
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
+using SchoolManagement.Api.Extensions;
 using SchoolManagement.Application.Features.Teachers.Commands.CreateTeacher;
 using SchoolManagement.Application.Features.Teachers.Queries.GetAllTeachers;
 
