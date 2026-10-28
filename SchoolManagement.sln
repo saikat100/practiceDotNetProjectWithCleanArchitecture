@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SchoolManagement.Domain", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SchoolManagement.Infrastructure", "SchoolManagement.Infrastructure\SchoolManagement.Infrastructure.csproj", "{CDAFCB9F-0824-4753-9B2B-1067DBA1F38C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SchoolManagement.SharedKernel", "SchoolManagement.SharedKernel\SchoolManagement.SharedKernel.csproj", "{720FE5B0-2D2F-4BC4-8920-84A1A8247C85}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -36,5 +38,9 @@ Global
 		{CDAFCB9F-0824-4753-9B2B-1067DBA1F38C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CDAFCB9F-0824-4753-9B2B-1067DBA1F38C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CDAFCB9F-0824-4753-9B2B-1067DBA1F38C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{720FE5B0-2D2F-4BC4-8920-84A1A8247C85}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{720FE5B0-2D2F-4BC4-8920-84A1A8247C85}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{720FE5B0-2D2F-4BC4-8920-84A1A8247C85}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{720FE5B0-2D2F-4BC4-8920-84A1A8247C85}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
